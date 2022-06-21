@@ -46,7 +46,7 @@ async function generateMovieCards() {
 
 		movieCard.appendChild(movieImage);
 		movieCard.appendChild(movieTitle);
-		movieCard.appendChild(movieYear);
 		movieCard.appendChild(movieRating);
+		movieCard.appendChild(movieYear);
 	});
 }

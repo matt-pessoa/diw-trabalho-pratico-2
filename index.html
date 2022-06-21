@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="style.css" />
-    <script src="./popularMovies.js"></script>
-    <script src="./search.js"></script>
-    <script src="./index.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
 
-    <title>Obvies</title>
-  </head>
-  <body>
-    <header>
-      <h1 id="teste">Ubvies</h1>
-      <input id="search-bar" placeholder="Pesquisar filmes" type="search" />
-    </header>
+		<link rel="stylesheet" href="./css/index.css" />
 
-    <main>
-      <section id="popular-movies">
-        <div id="cards"></div>
-      </section>
-  </body>
+		<script src="./popularMovies.js"></script>
+		<script src="./search.js"></script>
+		<script src="./index.js"></script>
+
+		<title>Ubvies</title>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1 id="teste">Ubvies</h1>
+				<div class="search">
+					<input id="search-bar" placeholder="Pesquisar filmes" type="search" />
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div class="container">
+				<section id="popular-movies">
+					<div id="cards"></div>
+				</section>
+			</div>
+		</main>
+
+		<footer>
+			<p>
+				~ Feito e atualizado por mim mesmo,
+				<a
+					href="https://github.com/matt-pessoa"
+					target="_blank"
+					style="color: #e51314"
+					>Matheus Pessoa</a
+				>, com HTML, CSS e JavaScript ~
+			</p>
+		</footer>
+	</body>
 </html>
