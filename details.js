@@ -48,7 +48,7 @@ async function generateDetails() {
   const detailsHomepage = document.createElement('a');
   detailsHomepage.innerText = 'Ir para site oficial';
   detailsHomepage.setAttribute('href', movieDetails.homepage);
-  detailsHomepage.setAttribute('_target', 'blank'); // ! Verificar como funciona
+  detailsHomepage.setAttribute('target', '_blank');
 
   detailsSection.appendChild(detailsImage);
   detailsSection.appendChild(detailsTitle);
