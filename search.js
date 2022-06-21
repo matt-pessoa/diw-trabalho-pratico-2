@@ -1,3 +1,13 @@
+function fetchDetails(movieId) {
+	const movieDetails = fetch(
+		`${baseURL}/movie/${movieId}?api_key=${APIKEY}&language=pt-BR`
+	)
+		.then((data) => data.json())
+		.then((result) => result);
+
+	return movieDetails;
+}
+
 function getQueryMovies(query) {
 	const response = fetch(
 		`${baseURL}/search/movie?api_key=${APIKEY}&language=pt-BR&query=${query}`
@@ -5,20 +15,20 @@ function getQueryMovies(query) {
 		.then((data) => data.json())
 		.then((result) => result);
 
+	console.log(response);
+
 	return response;
 }
 
 async function generateQueryCards(query) {
 	const { results } = await getQueryMovies(query);
-	console.log(results);
 	const cards = document.getElementById("cards");
 
-	results.forEach((movie) => {
+	results.forEach(async (movie) => {
 		const linkTo = document.createElement("a");
-		linkTo.setAttribute("href", "detalhes.html");
-		linkTo.onclick = () => {
-			localStorage.setItem("id", movie.id);
-		};
+		const movieDetails = await fetchDetails(movie.id);
+		linkTo.setAttribute("href", movieDetails.homepage);
+		linkTo.setAttribute("target", "_blank");
 		cards.appendChild(linkTo);
 
 		const movieCard = document.createElement("div");

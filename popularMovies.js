@@ -8,7 +8,6 @@ function getPopularMovies() {
 	)
 		.then((data) => data.json())
 		.then(({ results }) => results);
-
 	return popularMovies;
 }
 
@@ -51,11 +50,3 @@ async function generateMovieCards() {
 		movieCard.appendChild(movieRating);
 	});
 }
-
-window.onload = () => {
-	updateSearch();
-	const searchBar = document.getElementById("search-bar");
-	searchBar.addEventListener("input", (event) => {
-		updateSearch(event.target.value);
-	});
-};
