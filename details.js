@@ -45,12 +45,18 @@ async function generateDetails() {
     tagList.appendChild(tagListItem);
   });
 
+  const detailsHomepage = document.createElement('a');
+  detailsHomepage.innerText = 'Ir para site oficial';
+  detailsHomepage.setAttribute('href', movieDetails.homepage);
+  detailsHomepage.setAttribute('_target', 'blank'); // ! Verificar como funciona
+
   detailsSection.appendChild(detailsImage);
   detailsSection.appendChild(detailsTitle);
   detailsSection.appendChild(detailsYear);
   detailsSection.appendChild(detailsRating);
   detailsSection.appendChild(detailsDescription);
   detailsSection.appendChild(tagList);
+  detailsSection.appendChild(detailsHomepage);
 }
 
 window.onload = () => {
