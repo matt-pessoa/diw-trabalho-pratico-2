@@ -17,9 +17,16 @@ async function generateMovieCards() {
   const cards = document.getElementById('cards');
 
   popularMovies.forEach((movie) => {
+    const linkTo = document.createElement('a');
+    linkTo.setAttribute('href', 'detalhes.html');
+    linkTo.onclick = () => {
+      localStorage.setItem('id', movie.id);
+    };
+    cards.appendChild(linkTo);
+
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
-    cards.appendChild(movieCard);
+    linkTo.appendChild(movieCard);
 
     const movieImage = document.createElement('img');
     movieImage.setAttribute('src', `${baseImageURL}/${movie.poster_path}`);
