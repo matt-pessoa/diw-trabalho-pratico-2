@@ -18,6 +18,9 @@ async function generateDetails() {
 
 	const detailsSection = document.getElementById("movie-details");
 
+	const detailsInfo = document.createElement("div");
+	detailsInfo.classList.add("info");
+
 	const detailsImage = document.createElement("img");
 	detailsImage.setAttribute(
 		"src",
@@ -50,12 +53,14 @@ async function generateDetails() {
 	detailsHomepage.setAttribute("target", "_blank");
 
 	detailsSection.appendChild(detailsImage);
-	detailsSection.appendChild(detailsTitle);
-	detailsSection.appendChild(detailsYear);
-	detailsSection.appendChild(detailsRating);
-	detailsSection.appendChild(detailsDescription);
-	detailsSection.appendChild(tagList);
-	detailsSection.appendChild(detailsHomepage);
+	detailsInfo.appendChild(detailsTitle);
+	detailsInfo.appendChild(detailsYear);
+	detailsInfo.appendChild(detailsRating);
+	detailsInfo.appendChild(detailsDescription);
+	detailsInfo.appendChild(tagList);
+	detailsInfo.appendChild(detailsHomepage);
+
+	detailsSection.appendChild(detailsInfo);
 }
 
 window.onload = () => {
