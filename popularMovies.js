@@ -30,6 +30,7 @@ async function generateMovieCards() {
 
     const movieImage = document.createElement('img');
     movieImage.setAttribute('src', `${baseImageURL}/${movie.poster_path}`);
+    movieImage.setAttribute('alt', movie.title);
     movieImage.classList.add('movie-card-poster');
 
     const movieTitle = document.createElement('h2');
